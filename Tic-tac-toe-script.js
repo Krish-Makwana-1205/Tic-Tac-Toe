@@ -31,48 +31,67 @@ function goal_state(event){
         if(b2.innerHTML == b1.innerHTML && b3.innerHTML == b1.innerHTML){
             answer.value = "The winner is ";
             answer.value += b1.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b4 || event.target == b5 || event.target == b6){
         if(b5.innerHTML == b4.innerHTML && b6.innerHTML == b5.innerHTML){
             answer.value = "The winner is ";
             answer.value += b5.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b7 || event.target == b8 || event.target == b9){
         if((b7.innerHTML == b8.innerHTML) && (b7.innerHTML == b9.innerHTML)){
             answer.value = "The winner is ";
             answer.value += b7.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b4 || event.target == b1 || event.target == b7){
         if(b1.innerHTML == b4.innerHTML && b7.innerHTML == b1.innerHTML){
             answer.value = "The winner is ";
             answer.value += b1.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b2 || event.target == b5 || event.target == b8){
         if((b2.innerHTML == b5.innerHTML) && (b2.innerHTML == b8.innerHTML)){
             answer.value = "The winner is ";
             answer.value += b2.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b3 || event.target == b6 || event.target == b9){
         if(b3.innerHTML == b6.innerHTML && b3.innerHTML == b9.innerHTML){
             answer.value = "The winner is ";
             answer.value += b3.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b1 || event.target == b5 || event.target == b9){
         if(b1.innerHTML == b5.innerHTML && b1.innerHTML == b9.innerHTML){
             answer.value = "The winner is ";
             answer.value += b1.innerHTML;
+            disable_all()
         }
     }
     if(event.target == b7 || event.target == b5 || event.target == b3){
         if(b7.innerHTML == b5.innerHTML && b7.innerHTML == b3.innerHTML){
             answer.value = "The winner is ";
             answer.value += b3.innerHTML;
+            disable_all()
         }
     }
+}
+function disable_all(){
+    b1.disabled = true;
+    b2.disabled = true;
+    b3.disabled = true;
+    b4.disabled = true;
+    b5.disabled = true;
+    b6.disabled = true;
+    b7.disabled = true;
+    b8.disabled = true;
+    b9.disabled = true;
 }
