@@ -7,8 +7,9 @@ let b6 = document.getElementById("b6");
 let b7 = document.getElementById("b7");
 let b8 = document.getElementById("b8");
 let b9 = document.getElementById("b9");
-let answer = document.getElementById("winner");
-const bools = [];
+let prev;
+let count = 0;
+const bools = []
 for(let i = 0; i < 9; i++){
     bools[i] = false;
 }
@@ -17,12 +18,18 @@ function change(event){
     if(bools[nums(event)-1] == true){
         return ;
     }
+    ++count;
+    if(prev != null){
+        prev.style.backgroundColor = 'rgba(32, 32, 219, 0.324)';
+    }
+    event.target.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+    prev = event.target;
     if(toggle){
-        event.target.innerHTML = "X";
+        event.target.innerHTML = "O";
         //event.target.disabled = true;
     }
     else{
-        event.target.innerHTML = "O";
+        event.target.innerHTML = "X";
         //event.target.disabled = true;
     }
     console.log("Running");
@@ -33,63 +40,92 @@ function change(event){
 function goal_state(event){
     if(event.target == b1 || event.target == b2 || event.target == b3){
         if(b2.innerHTML == b1.innerHTML && b3.innerHTML == b1.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b1.innerHTML;
+            b1.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b2.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b3.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b4 || event.target == b5 || event.target == b6){
         if(b5.innerHTML == b4.innerHTML && b6.innerHTML == b5.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b5.innerHTML;
+            b4.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b5.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b6.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b7 || event.target == b8 || event.target == b9){
         if((b7.innerHTML == b8.innerHTML) && (b7.innerHTML == b9.innerHTML)){
-            answer.value = "The winner is ";
-            answer.value += b7.innerHTML;
+            b7.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b8.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b9.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b4 || event.target == b1 || event.target == b7){
         if(b1.innerHTML == b4.innerHTML && b7.innerHTML == b1.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b1.innerHTML;
+            b1.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b4.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b7.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b2 || event.target == b5 || event.target == b8){
         if((b2.innerHTML == b5.innerHTML) && (b2.innerHTML == b8.innerHTML)){
-            answer.value = "The winner is ";
-            answer.value += b2.innerHTML;
+            b2.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b5.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b8.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b3 || event.target == b6 || event.target == b9){
         if(b3.innerHTML == b6.innerHTML && b3.innerHTML == b9.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b3.innerHTML;
+            b3.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b6.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b9.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b1 || event.target == b5 || event.target == b9){
         if(b1.innerHTML == b5.innerHTML && b1.innerHTML == b9.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b1.innerHTML;
+            b1.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b5.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b9.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
     }
     if(event.target == b7 || event.target == b5 || event.target == b3){
         if(b7.innerHTML == b5.innerHTML && b7.innerHTML == b3.innerHTML){
-            answer.value = "The winner is ";
-            answer.value += b3.innerHTML;
+            b3.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b5.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            b7.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+            disable_all();
+            return ;
         }
+    }
+    if(count == 9){
+        b1.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b2.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b3.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b4.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b5.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b6.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b7.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b8.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
+        b9.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
     }
 }
 function disable_all(){
-    b1.disabled = true;
-    b2.disabled = true;
-    b3.disabled = true;
-    b4.disabled = true;
-    b5.disabled = true;
-    b6.disabled = true;
-    b7.disabled = true;
-    b8.disabled = true;
-    b9.disabled = true;
+    for(let i = 0; i < 9; i++){
+        bools[i] = true;
+    }
 }
 function nums(event){
     if(event.target == b1){
