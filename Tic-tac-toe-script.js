@@ -26,13 +26,10 @@ function change(event){
     prev = event.target;
     if(toggle){
         event.target.innerHTML = "O";
-        //event.target.disabled = true;
     }
     else{
         event.target.innerHTML = "X";
-        //event.target.disabled = true;
     }
-    console.log("Running");
     toggle = (!toggle);
     bools[nums(event)-1] = true;
     goal_state(event);
