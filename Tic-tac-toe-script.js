@@ -9,7 +9,7 @@ let b8 = document.getElementById("b8");
 let b9 = document.getElementById("b9");
 let prev;
 let count = 0;
-const bools = []
+const bools = [];
 for(let i = 0; i < 9; i++){
     bools[i] = false;
 }
@@ -153,4 +153,10 @@ function nums(event){
         return 9;
     }
 
+}
+module.export = {
+    nums,
+    disable_all,
+    goal_state,
+    change   
 }

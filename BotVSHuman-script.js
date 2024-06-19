@@ -314,3 +314,11 @@ function goal_state_bot(temp){
         b9.style.backgroundColor = 'rgba(59, 227, 30, 0.731)';
     }
 }
+module.export = {
+    bot_plays,
+    goal_state_bot,   
+    nums,
+    disable_all,
+    goal_state,
+    change,
+}

@@ -489,3 +489,14 @@ function bestmovemin(inter){
     }
     return [opt, opti];
 }
+module.export = {
+    goal_state,
+    bestmovemin,
+    bestmovemax,
+    finstate,
+    AI,
+    goal_state_bot,
+    bot_plays,
+    nums,
+    disable_all,
+}
