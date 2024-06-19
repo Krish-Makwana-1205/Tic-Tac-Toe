@@ -154,9 +154,3 @@ function nums(event){
     }
 
 }
-module.export = {
-    nums,
-    disable_all,
-    goal_state,
-    change   
-}
