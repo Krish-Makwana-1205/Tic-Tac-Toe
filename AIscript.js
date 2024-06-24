@@ -9,7 +9,6 @@ let b8 = document.getElementById("b8");
 let b9 = document.getElementById("b9");
 let prev;
 let count = 0;
-let bot = Math.floor(Math.random() * 10);
 const bools = [];
 for(let i = 0; i < 9; i++){
     bools[i] = false;
