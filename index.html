@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="index_style.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
+
 <body>
-    <form id="choice">
-        <label>
-            <input type="radio" name="game_mode" value="pvp" id = "pvp"> pvp
-        </label>
-        <label>
-            <input type="radio" name="game_mode" value="bot" id = "ebot"> easy bot
-        </label>
-        <label>
-            <input type="radio" name="game_mode" value="AI" id = "AI"> undefeatable bot
-        </label>
-    </form>
-    <button id = "submit" onclick = "select()">submit</button>
+    <div id="Box">
+        <div id="baby">
+            <div id = "finb">
+                <form id="choice">
+                    <div id  = "c">
+                    <label>
+                        <input type="radio" name="game_mode" value="pvp" id="pvp"> pvp
+                    </label>
+                </div>
+                    <div></div>
+                    <label>
+                        <input type="radio" name="game_mode" value="bot" id="ebot"> easy bot
+                    </label>
+                    <div></div>
+                    <label>
+                        <input type="radio" name="game_mode" value="AI" id="AI"> undefeatable bot
+                    </label>
+                </form>
+                <button id="submit" onclick="select()">submit</button>
+            </div>
+        </div>
+    </div>
     <script src="mainscript.js"></script>
 </body>
+
 </html>
